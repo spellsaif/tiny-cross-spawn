@@ -1,0 +1,54 @@
+{
+  "name": "tiny-cross-spawn",
+  "version": "1.0.0",
+  "description": "Zero-dependency, dual CJS/ESM, ReDoS-safe drop-in replacement for cross-spawn",
+  "license": "MIT",
+  "author": "nanasi",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spellsaif/tiny-cross-spawn.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "pretest": "npm run build",
+    "test": "node --test test/**/*.test.ts test/**/*.test.js",
+    "test:bun": "bun test",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "cross-spawn",
+    "spawn",
+    "spawnSync",
+    "windows",
+    "cmd",
+    "batch",
+    "shebang",
+    "child_process",
+    "zero-dependency",
+    "redos-safe"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsup": "^9.0.0",
+    "typescript": "^5.4.0"
+  }
+}
