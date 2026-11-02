@@ -29,7 +29,7 @@
   "scripts": {
     "build": "tsup",
     "pretest": "npm run build",
-    "test": "node --test test/**/*.test.ts test/**/*.test.js",
+    "test": "node --test test/*.test.ts test/*.test.js",
     "test:bun": "bun test",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build && npm test"
