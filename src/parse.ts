@@ -99,14 +99,9 @@ export function resolveCommand(parsed: ParsedCommand, withoutPathExt = false): s
       return checkFile(basePath);
     }
 
-    const direct = checkFile(basePath);
-    if (direct) {
-      return direct;
-    }
-
     const ext = path.extname(basePath).toUpperCase();
     if (pathextList.some((pe) => pe.toUpperCase() === ext)) {
-      return direct;
+      return checkFile(basePath);
     }
 
     for (const pe of pathextList) {
